@@ -1703,57 +1703,6 @@ $(document).ready(function () {
 
 // Search Filter
 
-$(document).ready(function () {
-      let lastScrollTop = 0;
-      let accordion = $("#accordionContainer");
-      let accordionWrapper = $("#accordionWrapper");
-      let originalOffset = accordionWrapper.offset().top;
-  
-      function isAnyAccordionOpen() {
-        return $(".accordion-collapse.show").length > 0;
-      }
-  
-      function updateStickyFullscreen() {
-        if (accordion.hasClass("sticky") && isAnyAccordionOpen()) {
-          accordion.css("height", "100vh");
-          $('body').css("overflow-y", "hidden");
-        } else {
-          accordion.css("height", "auto");
-          $('body').css("overflow-y", "auto");
-        }
-      }
-  
-      $(window).scroll(function () {
-        let currentScroll = $(this).scrollTop();
-  
-        if (currentScroll > lastScrollTop) {
-          // Scrolling down
-          if (currentScroll >= originalOffset) {
-            if (!accordion.hasClass("sticky")) {
-              accordion.addClass("sticky");
-              $(".accordion-collapse").collapse("hide"); // Collapse all
-              updateStickyFullscreen(); // Check for full screen height
-            }
-          }
-        } else {
-          // Scrolling up
-          if (currentScroll < originalOffset) {
-            accordion.removeClass("sticky");
-            $(".accordion-collapse").collapse("show"); // Show on scroll up
-            accordion.css("height", "auto");
-            $('body').css("overflow-y", "auto");
-          }
-        }
-  
-        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
-      });
-  
-      // Update fullscreen status whenever accordion toggles
-      $(".accordion-button").on("click", function () {
-        setTimeout(updateStickyFullscreen, 300); // Wait for collapse/expand animation
-      });
-    });
-
 // Teaser Swiper
 function initializeSwiper() {
     var swiper = new Swiper(".mySwiper", {
