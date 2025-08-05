@@ -4780,6 +4780,10 @@ a:focus .pdfdownload {
     display: inline-block;
 }
 
+.filters-content.active {
+    background-color: var(--color-secondary);
+}
+
 .filter-list {
     padding-left: 10px;
 }
