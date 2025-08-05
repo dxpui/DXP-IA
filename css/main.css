@@ -2089,11 +2089,23 @@ header .search-box {
     --bs-accordion-border-color: var(--color-light-gray)
 }
 
+/* @media(max-width: 768px) {
+    .search-filter {
+        margin-left: 25px;
+        margin-right: 25px;
+        position: relative;
+    }
+} */
+
 .search-filter .accordion-body {
     padding-top: 0;
     padding-bottom: 20px;
     padding-inline: 0;
 }
+
+/* .search-filter .accordion {
+    --bs-accordion-btn-active-icon: url("../assets/img/web-icons/arrow-white.svg");
+} */
 
 .search-filter .accordion-header .accordion-button {
     font-weight: 600;
@@ -2200,7 +2212,7 @@ header .search-box {
     box-shadow: none;
 }
 
-.search-filter .vscomp-wrapper:not(.has-value) .vscomp-value {
+.search-filter .vscomp-wrapper:not(.has-value) .vscomp-value{
     opacity: 1;
 }
 
@@ -2275,9 +2287,9 @@ header .search-box {
     position: absolute;*/
 }
 
-.social-icons-box.visible {
-    display: block;
-}
+    .social-icons-box.visible {
+        display: block;
+    }
 
 .social-share-icon-btn {
     margin-left: auto;
@@ -5182,7 +5194,7 @@ table {
 }
 
 table tr th,
-table tr td {
+table tr td{
     border: 1px solid var(--color-default);
 }
 
@@ -6257,7 +6269,7 @@ blockquote cite {
     padding-bottom: 1.5rem;
 }
 
-.teaser-bg-padding {
+.teaser-bg-padding{
     padding-bottom: 2px;
 }
 
@@ -6479,7 +6491,6 @@ blockquote cite {
 .EPiServerForms .ValidationRequired .Form__Element__Caption:after {
     content: none !important;
 }
-
 /******************************************************/
 
 .custom-form label {
@@ -6900,13 +6911,11 @@ agendas-container agendas-item agendas-published {
     }
 }
 
-
 @media (min-width: 1200px) {
     .BI-report-height {
         height: 620px;
     }
 }
-
 
 .search-filter input[type="date"] {
     height: 47px;
@@ -6923,7 +6932,7 @@ input::-webkit-date-and-time-value {
     }
 }
 
-.pdf-content {
+.pdf-content{
     display: block;
     margin-bottom: 10px;
 }
@@ -6938,9 +6947,9 @@ input::-webkit-date-and-time-value {
         stroke: var(--color-default);
     }
 
-    .info-card:hover .svg-arrow path {
-        stroke: var(--color-default);
-    }
+        .info-card:hover .svg-arrow path {
+            stroke: var(--color-default);
+        }
 
     .alert .alert-close svg {
         fill: rgb(56, 143, 220);
@@ -6999,11 +7008,11 @@ input::-webkit-date-and-time-value {
         width: 24px;
     }
 
-    .download-svg path {
-        stroke: #ffc107;
-    }
+        .download-svg path {
+            stroke: #ffc107;
+        }
 
-    .header .menu>ul>li>button {
+    .header .menu > ul > li > button {
         border-bottom: none;
     }
 
@@ -7027,7 +7036,7 @@ input::-webkit-date-and-time-value {
     .header .menu>ul>li>button {
         border-bottom: none;
     }
-
+  
 }
 
 /* Toast Notification */
