@@ -729,13 +729,75 @@
           <div class="col-12 gray-bg">
             <div class="recommendation-block-outer">
               <div class="row">
-                <div id="CTABlockId" class="col-12 maroon-bg">
-                  <div class="row">
+                <div id="CTABlockId" class="col-12">
+                  <section class="row">
                     <div class="col-12 white-bg p-4">
-                      <span class="">Content and filters are tailored to your interests. <a href="#">Update your
+                      <span class="">Content and filters are tailored to your interests. <a href="#"
+                          data-bs-toggle="modal" data-bs-target="#language-notification">Update your
                           interests.</a></span>
                     </div>
-                  </div>
+                    <div class="modal language-notification fade" id="language-notification" tabindex="-1" aria-hidden="true">
+                      <div class="modal-dialog modal-xl modal-dialog-centered">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                           <a href="" class="icon-info"><span class="visually-hidden-focusable">Info Icon</span>
+                             <i class="fa-solid fa-circle-info f-size-x"></i>
+                           </a>
+                            <!-- <div class="modal-title" id="exampleModalLabel1">Translate page from Welsh?</div> -->
+                            <button type="button" class="" data-bs-dismiss="modal" aria-label="Close"><i
+                                class="fa fa-times" aria-hidden="true"></i></button>
+                          </div>
+                          <div class="modal-body">
+                              <!-- <div class="toast-header">
+                                <i class="fa-solid fa-circle-info f-size-m "></i>
+                                <button type="button" class="btn-close" data-bs-dismiss="toast"
+                                  aria-label="Close"></button>
+                              </div> -->
+                              <div class="toast-body text-center">
+                                <h3 class="body-header">Interested in Internet-based services?</h3>
+                                We can show you more relevant content based on your interests
+
+                                <div class="text-center mt-3">
+                                  <a href="javascript:void(0);" class="btn btn-secondary filters-content btn-small">
+                                    Advice for consumers (i)
+                                  </a>
+                                  <a href="javascript:void(0);"
+                                    class="btn btn-secondary filters-content active btn-small">
+                                    Research, statistics and data (i)
+                                  </a>
+                                  <a href="javascript:void(0);" class="btn btn-secondary filters-content btn-small">
+                                    Online habits (i)
+                                  </a>
+                                  <a href="javascript:void(0);"
+                                    class="btn btn-secondary filters-content active btn-small">
+                                    Online habits (i)
+                                  </a>
+                                  <a href="javascript:void(0);" class="btn btn-secondary filters-content btn-small">
+                                    Media use and attitudes (i)
+                                  </a>
+                                  <a href="javascript:void(0);" class="btn btn-secondary filters-content btn-small">
+                                    Information for industry (i)
+                                  </a>
+                                </div>
+                                <!-- <div class="d-flex my-1 justify-content-end">
+                                  <a href="https://www-dev1.ofcom.org.uk/advice-for-consumers?SelectedTopic=67899"
+                                    class="btn btn-primary">
+                                    Save preferences <i class="ms-4 fa-solid fa-arrow-right"></i>
+                                  </a>
+                                </div> -->
+                              </div>
+                          
+                          <div class="modal-footer d-flex mt-1 justify-content-end">
+                                  <a href="https://www-dev1.ofcom.org.uk/advice-for-consumers?SelectedTopic=67899"
+                                    class="btn btn-primary">
+                                    Save preferences <i class="ms-4 fa-solid fa-arrow-right"></i>
+                                  </a>
+
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </section>
                   <div class="block  ctaquicklinksblock  ">
                     <div class="maroon-bg recommendation-block">
                       <div class="row">
@@ -840,7 +902,7 @@
                         <div class="search-box position-relative">
                           <input type="search" class="search-box-input results-input" name="query" id="query"
                             autocomplete="off" placeholder="Search" value="">
-                          <label for="query" class="visually-hidden-focusable">Search</label>
+                          <label for="query" class="visually-hidden-focusable text-dark">Search</label>
                           <a href="javascript:void(0)" class="serach-icon-btn px-1" aria-label="Search"
                             onclick="localSearch();">
                             <i class="fas fa-search page-search"></i>
@@ -978,12 +1040,13 @@
           </div>
         </div> -->
 
-        <div class="col-xxl-3 col-xl-4 col-md-4 col-sm-6">
+        <div class="col-sm-12 col-md-6">
           <div class="filter-btn">
             <div class="dropdown-center sort-list">
               <button class="btn btn-secondary hover-none dropdown-toggle" type="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
-                Sort by Newest to oldest <i class="fa-solid fa-chevron-down ms-2"></i>
+
+                Trefnu yn ôl Perthnasedd <i class="fa-solid fa-chevron-down ms-2"></i>
               </button>
               <ul class="dropdown-menu" id="ddsort" style="">
                 <li data-value="Newest" select="true"><a href="javascript:void(0);" class="dropdown-item">Newest to
@@ -995,12 +1058,14 @@
             </div>
           </div>
         </div>
-        <div class="col-6 col-xxl-2 col-xl-3 col-md-4 col-sm-4">
+        <div class="col-auto">
           <div class="filter-btn">
             <div class="dropdown-center sort-list">
               <button class="btn btn-secondary hover-none dropdown-toggle" type="button" data-bs-toggle="dropdown"
                 aria-expanded="false">
-                Results to display <i class="fa-solid fa-chevron-down ms-2"></i>
+
+                Canlyniadau i'w harddangos
+                10 <i class="fa-solid fa-chevron-down ms-2"></i>
               </button>
               <ul class="dropdown-menu" id="ddsort" style="">
                 <li data-value="Newest" select="true"><a href="javascript:void(0);"
@@ -1039,11 +1104,13 @@
         </div>
       </div>
     </section>
-    <section class="container-xl mt-3">
+    <section class="container-xl mt-5">
+      <h2 class="text-center teaser-header h3">In this section</h2>
       <div class="row">
         <div class="col-md-12 col-lg-4">
 
-          <h3 class="ml-3 mb-3 mt-5">Hero carousel block</h3>
+          <!-- <h4 class="ml-3 mb-3 ">Hero carousel block area</h4> -->
+          <img src="assets/img/Hero-carousel-block.png" alt="">
           <!-- <div class="block  herocarouselblock  ">
               <h1 id="skipToContent" class="visually-hidden-focusable">Ofcom home</h1>
               <div id="carouselExampleCaptions" class="carousel slide homepage-carousel-cls" data-bs-touch="true"
@@ -1163,7 +1230,7 @@
 
         </div>
         <div class="col-md-12 col-lg-8">
-          <h2 class="text-center teaser-header h3">In this section</h2>
+
           <div class="row extra-margin">
 
             <div class="block  standardpage col-12 col-md-6 half">
@@ -1274,7 +1341,7 @@
       </div>
 
     </section>
-    <section class="container mt-5">
+    <!-- <section class="container mt-5">
       <div class="col-md-12 col-lg-12 mx-auto">
         <div role="alert" aria-live="assertive" aria-atomic="true" class="toast notification-block d-block "
           data-bs-autohide="false">
@@ -1314,7 +1381,7 @@
           </div>
         </div>
       </div>
-    </section>
+    </section> -->
     <section>
 
       <div class="block  contenttypeblock  ">
@@ -1903,7 +1970,124 @@
       });
     });
   </script>
+  <script>
+    (function () {
+      const TARGET_SELECTOR = "body";
+      const DOWNLOAD_FILENAME = document.title.replace(/[^\w\-]+/g, "_") + "_printable.html";
+      const PRINT_TWEAKS = `
+        @page { margin: 16mm; }
+        @media print {
+          .no-print, [data-no-print="true"] { display: none !important; }
+        }
+      `;
 
+      async function imgToDataURL(img) {
+        try {
+          if (!img || !img.src || img.src.startsWith("data:")) return;
+          const el = new Image();
+          el.crossOrigin = "anonymous";
+          el.src = img.src;
+          await new Promise((res, rej) => {
+            el.onload = res; el.onerror = rej;
+          });
+          const canvas = document.createElement("canvas");
+          canvas.width = el.naturalWidth; canvas.height = el.naturalHeight;
+          const ctx = canvas.getContext("2d");
+          ctx.drawImage(el, 0, 0);
+          const data = canvas.toDataURL("image/png");
+          img.setAttribute("src", data);
+          if (!img.getAttribute("width") && el.naturalWidth) img.setAttribute("width", el.naturalWidth);
+          if (!img.getAttribute("height") && el.naturalHeight) img.setAttribute("height", el.naturalHeight);
+        } catch (e) { }
+      }
+
+      function inlineNodeStyles(node) {
+        if (node.nodeType !== 1) return;
+        const cs = window.getComputedStyle(node);
+        let cssText = "";
+        for (let i = 0; i < cs.length; i++) {
+          const prop = cs[i];
+          const val = cs.getPropertyValue(prop);
+          if (val) cssText += prop + ":" + val + ";";
+        }
+        node.setAttribute("style", cssText);
+        for (const child of node.children) inlineNodeStyles(child);
+      }
+
+      function gatherStylesFromStyleSheets() {
+        let css = "";
+        for (const ss of Array.from(document.styleSheets)) {
+          try {
+            if (!ss.cssRules) continue;
+            for (const rule of Array.from(ss.cssRules)) {
+              css += rule.cssText + "\n";
+            }
+          } catch (e) { }
+        }
+        return css;
+      }
+
+      async function cloneWithInlineAssets(rootEl) {
+        const clone = rootEl.cloneNode(true);
+        inlineNodeStyles(clone);
+        const imgs = clone.querySelectorAll("img");
+        await Promise.all(Array.from(imgs).map(imgToDataURL));
+        return clone;
+      }
+
+      function buildDocHTML({ title, headStyle, bodyHTML, headScripts = "" }) {
+        const charsetMeta = '<meta charset="utf-8">';
+        const viewportMeta = '<meta name="viewport" content="width=device-width, initial-scale=1">';
+        return [
+          "<!doctype html>",
+          "<html>",
+          "<head>",
+          charsetMeta,
+          viewportMeta,
+          `<title>${title}</title>`,
+          "<style>",
+          headStyle,
+          "</style>",
+          "</head>",
+          "<body>",
+          bodyHTML,
+          "<script>",
+          headScripts,
+          "<\/script>",
+          "</body>",
+          "</html>"
+        ].join("\n");
+      }
+
+      async function downloadSelfContainedHTML() {
+        const target = document.querySelector(TARGET_SELECTOR) || document.body;
+        const cloned = await cloneWithInlineAssets(target);
+        const sheetCSS = gatherStylesFromStyleSheets();
+        const headStyle = PRINT_TWEAKS + "\n\n" + sheetCSS;
+
+        const inlineJS = ``;
+        const html = buildDocHTML({
+          title: (document.title || "Document") + " — Printable Copy",
+          headStyle,
+          bodyHTML: cloned.outerHTML,
+          headScripts: inlineJS
+        });
+
+        const blob = new Blob([html], { type: "text/html" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = DOWNLOAD_FILENAME;
+        document.body.appendChild(a);
+        a.click();
+        a.remove();
+        URL.revokeObjectURL(url);
+      }
+
+      const btn = document.getElementById("download-html-btn");
+      btn.addEventListener("click", downloadSelfContainedHTML);
+    })();
+  </script>
 
 </body>
 

@@ -219,6 +219,10 @@ h6,
     font-size: 1.25rem;
 }
 
+.f-size-x {
+    font-size: 1.7rem;
+}
+
 .f-size-xl {
     font-size: 2rem;
 }
@@ -726,7 +730,7 @@ a.purple-btn:focus-visible {
 }
 
 .btn-tag.bordered:hover,
-.btn-tag.bordered:focus-visible  {
+.btn-tag.bordered:focus-visible {
     background-color: var(--color-default);
     color: var(--color-white);
     border: 1px solid var(--color-default);
@@ -2068,7 +2072,7 @@ header .search-box {
     color: var(--color-default);
 }
 
-.new-search .search-box  {
+.new-search .search-box {
     margin-top: 20px;
     margin-bottom: 20px;
 }
@@ -2212,7 +2216,7 @@ header .search-box {
     box-shadow: none;
 }
 
-.search-filter .vscomp-wrapper:not(.has-value) .vscomp-value{
+.search-filter .vscomp-wrapper:not(.has-value) .vscomp-value {
     opacity: 1;
 }
 
@@ -2287,9 +2291,9 @@ header .search-box {
     position: absolute;*/
 }
 
-    .social-icons-box.visible {
-        display: block;
-    }
+.social-icons-box.visible {
+    display: block;
+}
 
 .social-share-icon-btn {
     margin-left: auto;
@@ -4919,7 +4923,7 @@ a:focus .pdfdownload {
     text-align: center;
 }
 
-@media(max-width: 1200px) {
+@media(max-width: 768px) {
     .showfilters-align {
         text-align: center;
     }
@@ -5194,7 +5198,7 @@ table {
 }
 
 table tr th,
-table tr td{
+table tr td {
     border: 1px solid var(--color-default);
 }
 
@@ -5555,11 +5559,11 @@ padding-right: 80px; */
 .language-notification .modal-header button {
     border: none;
     background: none;
-    width: 30px;
-    height: 46px;
+    width: 44px;
+    height: 38px;
     position: absolute;
-    right: 10px;
-    top: 0;
+    right: 5px;
+    top: 5px;
 }
 
 .language-notification .modal-body {
@@ -6269,7 +6273,7 @@ blockquote cite {
     padding-bottom: 1.5rem;
 }
 
-.teaser-bg-padding{
+.teaser-bg-padding {
     padding-bottom: 2px;
 }
 
@@ -6491,6 +6495,7 @@ blockquote cite {
 .EPiServerForms .ValidationRequired .Form__Element__Caption:after {
     content: none !important;
 }
+
 /******************************************************/
 
 .custom-form label {
@@ -6932,7 +6937,7 @@ input::-webkit-date-and-time-value {
     }
 }
 
-.pdf-content{
+.pdf-content {
     display: block;
     margin-bottom: 10px;
 }
@@ -6947,9 +6952,9 @@ input::-webkit-date-and-time-value {
         stroke: var(--color-default);
     }
 
-        .info-card:hover .svg-arrow path {
-            stroke: var(--color-default);
-        }
+    .info-card:hover .svg-arrow path {
+        stroke: var(--color-default);
+    }
 
     .alert .alert-close svg {
         fill: rgb(56, 143, 220);
@@ -7008,11 +7013,11 @@ input::-webkit-date-and-time-value {
         width: 24px;
     }
 
-        .download-svg path {
-            stroke: #ffc107;
-        }
+    .download-svg path {
+        stroke: #ffc107;
+    }
 
-    .header .menu > ul > li > button {
+    .header .menu>ul>li>button {
         border-bottom: none;
     }
 
@@ -7036,7 +7041,7 @@ input::-webkit-date-and-time-value {
     .header .menu>ul>li>button {
         border-bottom: none;
     }
-  
+
 }
 
 /* Toast Notification */
@@ -7094,4 +7099,14 @@ input::-webkit-date-and-time-value {
     margin: 0;
     margin-right: 5px;
     margin-left: 5px;
+}
+
+.icon-info {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+}
+
+.icon-info i{
+    color: #000000;
 }
