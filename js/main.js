@@ -1702,7 +1702,105 @@ $(document).ready(function () {
 });  
 
 // Search Filter
+function stickyFilterTop() {
+      let lastScrollTop = 0;
+      let lastTimestamp = Date.now();
+      let accordion = $("#accordionContainer");
+      let accordionWrapper = $("#accordionWrapper");
+      let originalOffset = accordionWrapper.offset().top;
+      let addPaddingTarget = $("#add-padding-top");
 
+      // ✅ Create hidden live region for screen readers
+      let ariaLive = $("#aria-live");
+      if (ariaLive.length === 0) {
+        $("body").append('<div id="aria-live" class="sr-only" aria-live="polite"></div>');
+        ariaLive = $("#aria-live");
+      }
+
+      // Function to announce messages for accessibility
+      function announceForScreenReader(message) {
+        ariaLive.text(message);
+      }
+
+      function isAnyAccordionOpen() {
+        return $(".accordion-collapse.show").length > 0;
+      }
+
+      function updateStickyFullscreen() {
+        if (accordion.hasClass("sticky") && isAnyAccordionOpen()) {
+          accordion.css("height", "100vh");
+          $("body").css("overflow-y", "hidden");
+        } else {
+          accordion.css("height", "auto");
+          $("body").css("overflow-y", "auto");
+        }
+      }
+
+      $(window).on("scroll", function () {
+        let currentScroll = $(this).scrollTop();
+        let currentTimestamp = Date.now();
+
+        // Calculate scroll speed in px/sec
+        let distance = Math.abs(currentScroll - lastScrollTop);
+        let timeDiff = currentTimestamp - lastTimestamp;
+        let speed = distance / (timeDiff || 1); // px per ms
+
+        // Map speed to animation duration
+        let minDuration = 100;  // Fastest
+        let maxDuration = 500;  // Slowest
+        let duration = Math.max(minDuration, maxDuration - speed * 3);
+        duration = Math.min(duration, maxDuration);
+
+        // Apply smooth transition
+        accordion.css("transition", `all ${duration}ms ease`);
+
+        if (currentScroll > lastScrollTop) {
+          // Scrolling down
+          if (currentScroll >= originalOffset) {
+            if (!accordion.hasClass("sticky")) {
+              accordion.addClass("sticky");
+              addPaddingTarget.css("padding-top", "120px");
+
+              $(".accordion-collapse").collapse("hide"); // Collapse all
+              announceForScreenReader("Filter collapsed"); // ✅ Accessibility
+              updateStickyFullscreen();
+            }
+          }
+        } else {
+          // Scrolling up
+          if (currentScroll < originalOffset) {
+            if (accordion.hasClass("sticky")) {
+              accordion.removeClass("sticky");
+              addPaddingTarget.css("padding-top", "0px");
+
+              $(".accordion-collapse").collapse("show");
+              announceForScreenReader("Filter expanded"); // ✅ Accessibility
+              accordion.css("height", "auto");
+              $("body").css("overflow-y", "auto");
+            }
+          }
+        }
+
+        lastScrollTop = currentScroll <= 0 ? 0 : currentScroll;
+        lastTimestamp = currentTimestamp;
+      });
+
+      // Update fullscreen status and announce on manual accordion toggle
+      $(".accordion-button").on("click", function () {
+        setTimeout(function () {
+          if (isAnyAccordionOpen()) {
+            announceForScreenReader("Filter expanded"); // ✅ Accessibility
+          } else {
+            announceForScreenReader("Filter collapsed"); // ✅ Accessibility
+          }
+          updateStickyFullscreen();
+        }, 300);
+      });
+    }
+
+    $(document).ready(function () {
+      stickyFilterTop();
+    });
 // Teaser Swiper
 function initializeSwiper() {
     var swiper = new Swiper(".mySwiper", {
