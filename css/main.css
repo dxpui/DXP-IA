@@ -7118,12 +7118,110 @@ input::-webkit-date-and-time-value {
     color: #000000;
 }
 
-.interest-modal{
+.interest-modal {
     padding: 20px 40px;
 }
 
 @media(max-width: 992px) {
-  .interest-modal{
-    padding: 20px;
-  }
+    .interest-modal {
+        padding: 20px;
+    }
+}
+
+
+
+.chkbox-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+/* Hide the native checkbox visually but keep it accessible */
+.chkbox-group .form-check-input {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.chkbox-group .form-check{
+    padding-left: 0;
+}
+/* Label acts as full clickable box */
+.chkbox-group .check-label {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0 1rem;
+    border: 1px solid var(--color-default);
+    border-radius: 0;
+    background-color: #fff;
+    color: #000;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.25s ease-in-out;
+    margin-top: 37px;
+    height: 46px;
+}
+
+@media (max-width: 767px) {
+    .chkbox-group .check-label {
+        margin-top: 30px;
+        margin-bottom: 0;
+    }
+}
+
+/* Custom checkbox box inside the label */
+.chkbox-group .check-box {
+    width: 22px;
+    height: 22px;
+    border: 2px solid #999;
+    border-radius: 0;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #fff;
+    transition: all 0.25s ease-in-out;
+    flex-shrink: 0;
+}
+
+/* Check icon (Bootstrap SVG tick mark) */
+.chkbox-group .check-icon {
+    display: none;
+    color: var(--color-default);;
+    width: 24px;
+    height: 24px;
+    margin-top: 4px;
+}
+
+/* Checked state */
+.chkbox-group .form-check-input:checked+.check-label {
+    background-color: var(--color-default);
+    border-color: var(--color-default);
+    color: #fff;
+}
+
+.chkbox-group .form-check-input:checked+.check-label .check-box {
+    background-color: #fff;
+    border-color: #fff;
+}
+
+.chkbox-group .form-check-input:checked+.check-label .check-icon {
+    display: block;
+}
+
+/* Focus accessibility */
+.chkbox-group .form-check-input:focus+.check-label {
+    outline: 3px solid #00bfff;
+    outline-offset: 2px;
+}
+
+.chkbox-group .check-label:hover {
+    border-color: #999;
+}
+
+@media (prefers-contrast: more) {
+    .chkbox-group .check-label {
+        border-width: 3px;
+    }
 }
