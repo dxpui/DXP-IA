@@ -7212,8 +7212,8 @@ input::-webkit-date-and-time-value {
 
 /* Focus accessibility */
 .chkbox-group .form-check-input:focus+.check-label {
-    outline: 3px solid #00bfff;
-    outline-offset: 2px;
+    outline: 3px solid var(--color-outline-focus);
+    outline-offset: 0px;
 }
 
 .chkbox-group .check-label:hover {
