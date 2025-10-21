@@ -1079,6 +1079,34 @@ header .search-box {
     color: var(--color-default);
 }
 
+.quick-link-box {
+    border: 1px solid var(--color-default);
+    padding: 30px 15px 10px 15px;
+}
+
+.quick-link-box .info-card {
+    margin-bottom: 0;
+}
+
+@media(max-width: 768px) {
+   .quick-link-box .info-card {
+    margin-bottom: 20px;
+}
+}
+
+.quick-link-box .info-card::before {
+    background-color: transparent;
+}
+
+.quick-link-box .info-card .info-card-header {
+    font-size: .875rem;
+}
+
+.quick-link-box .news-badge {
+    top: -15px;
+    left: 15px;
+}
+
 .gl-search {
     font-size: 2rem;
     cursor: pointer;
@@ -7143,9 +7171,10 @@ input::-webkit-date-and-time-value {
     pointer-events: none;
 }
 
-.chkbox-group .form-check{
+.chkbox-group .form-check {
     padding-left: 0;
 }
+
 /* Label acts as full clickable box */
 .chkbox-group .check-label {
     position: relative;
@@ -7188,7 +7217,8 @@ input::-webkit-date-and-time-value {
 /* Check icon (Bootstrap SVG tick mark) */
 .chkbox-group .check-icon {
     display: none;
-    color: var(--color-default);;
+    color: var(--color-default);
+    ;
     width: 24px;
     height: 24px;
     margin-top: 4px;
@@ -7223,5 +7253,29 @@ input::-webkit-date-and-time-value {
 @media (prefers-contrast: more) {
     .chkbox-group .check-label {
         border-width: 3px;
+    }
+}
+
+.search-error-message {
+    visibility: hidden;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+    height: 20px;
+    line-height: 20px;
+    width: 100%;
+    /* font-size: 1rem; */
+    color: var(--color-secondary);
+    margin: 1rem auto;
+    margin-bottom: 0;
+}
+
+.search-error-message.show {
+    visibility: visible;
+    opacity: 1;
+}
+
+@media (min-width: 1024px) {
+    .search-error-message {
+        width: 90%;
     }
 }
